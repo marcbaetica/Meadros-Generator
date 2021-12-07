@@ -4,7 +4,7 @@ from turtle import window_width, window_height, penup, pendown, forward, backwar
     left, position, setpos, hideturtle
 
 
-BORDER_SPACING_UNITS = 2  # Represents width of the pattern.
+PATTERN_WIDTH = 2  # Represents width of the pattern.
 
 
 class SimpleMeandros(MeandrosDrawingBase):
@@ -19,7 +19,7 @@ class SimpleMeandros(MeandrosDrawingBase):
 
     def _draw_borders(self):
         print(self.corners_edge)
-        draw_borders(self.pen_size, BORDER_SPACING_UNITS, self.corners_edge)
+        draw_borders(self.pen_size, PATTERN_WIDTH, self.corners_edge)
 
     def _draw_pattern_once(self):
         # draw_in_direction(self.pen_size * 1)

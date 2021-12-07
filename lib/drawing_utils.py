@@ -35,12 +35,12 @@ def draw_outer_border(corners, increment_size):
     draw_in_direction(outer_border_width, 'right', 90)
 
 
-def draw_inner_border(corners, increment_size, border_spacing_units):
+def draw_inner_border(corners, increment_size, pattern_width):
     upper_left_corner = corners[3]
     lower_right_corner = corners[1]
 
-    buffer = 2 * increment_size + increment_size * border_spacing_units
-    print(increment_size, border_spacing_units, buffer)
+    buffer = 2 * increment_size + increment_size * pattern_width
+    print(increment_size, pattern_width, buffer)
 
     print(upper_left_corner, lower_right_corner)
     inner_border_length = abs(upper_left_corner[0]+buffer) + abs(lower_right_corner[0]-buffer)
@@ -56,11 +56,11 @@ def draw_inner_border(corners, increment_size, border_spacing_units):
     draw_in_direction(inner_border_width, 'right', 90)
 
 
-def draw_borders(pen_size, border_spacing_units, corners):
+def draw_borders(pen_size, pattern_width, corners):
     increment_size = pen_size
 
     draw_outer_border(corners, increment_size)
-    draw_inner_border(corners, increment_size, border_spacing_units)
+    draw_inner_border(corners, increment_size, pattern_width)
 
 
 def draw_in_direction(pixels, direction='left', angle=0):
