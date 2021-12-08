@@ -1,4 +1,4 @@
-from turtle import left, right, forward, goto, seth, window_width, position, setpos, penup, pendown
+from turtle import left, right, forward, seth, setpos, penup, pendown
 
 
 def draw_outer_border(corners, increment_size):

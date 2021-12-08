@@ -1,7 +1,6 @@
 from lib.drawing_utils import draw_borders, draw_in_direction
 from lib.MeanderDrawingBase import MeandrosDrawingBase
-from turtle import window_width, window_height, penup, pendown, forward, backward, right, \
-    left, position, setpos, seth, hideturtle, goto
+from turtle import pendown, penup, position, setpos, seth
 
 
 # Used for calculating the start drawing position of the drawing so meandros fits in the center.

@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
-from turtle import width, window_width, window_height, penup, pendown, forward, backward, right, left, speed,\
-    pos, setpos, Screen, color, screensize, goto, hideturtle
+from turtle import width, penup, pendown, speed, color, screensize, goto, hideturtle
 
 
 class MeandrosDrawingBase(ABC):
@@ -12,9 +11,7 @@ class MeandrosDrawingBase(ABC):
 
     @staticmethod
     def _set_background_color(background_color):
-        screen = Screen()
-        screensize(300, 100, background_color)
-        # screen.bgcolor()
+        screensize(300, 100, background_color)  # TODO: Fix size enforcement and take resolution as parameters.
 
     @abstractmethod
     def _draw_borders(self):
