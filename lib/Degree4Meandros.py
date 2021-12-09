@@ -4,13 +4,13 @@ from turtle import pendown, penup, position, setpos, seth
 
 
 # Used for calculating the start drawing position of the drawing so meandros fits in the center.
-PATTERN_WIDTH_UNITS = 4
-CORNERS_WIDTH = 8
+PATTERN_WIDTH_UNITS = 10
+CORNERS_WIDTH = 18
 # Used for calculating the position of the inner border.
-PATTERN_HEIGHT = 3
+PATTERN_HEIGHT = 11
 
 
-class SimpleMeandros(MeandrosDrawingBase):
+class Degree4Meandros(MeandrosDrawingBase):
     def __init__(self, pen_size, stroke_speed, pen_color, background_color):
         self.corners_edge = []
         self.pen_size = pen_size
@@ -32,18 +32,34 @@ class SimpleMeandros(MeandrosDrawingBase):
         draw_borders(self.pen_size, PATTERN_HEIGHT, self.corners_edge)
 
     def _draw_pattern_once(self):
-        draw_in_direction(self.pen_size * 2, 'left', 90)
+        draw_in_direction(self.pen_size * 10, 'left', 90)
+        draw_in_direction(self.pen_size * 10, 'right', 90)
+        draw_in_direction(self.pen_size * 8, 'right', 90)
+        draw_in_direction(self.pen_size * 6, 'right', 90)
+        draw_in_direction(self.pen_size * 4, 'right', 90)
         draw_in_direction(self.pen_size * 2, 'right', 90)
         draw_in_direction(self.pen_size * 2, 'right', 90)
         draw_in_direction(self.pen_size * 2, 'left', 90)
+        draw_in_direction(self.pen_size * 4, 'left', 90)
+        draw_in_direction(self.pen_size * 6, 'left', 90)
+        draw_in_direction(self.pen_size * 8, 'left', 90)
+        draw_in_direction(self.pen_size * 10, 'left', 90)
 
     def _draw_pattern_corner(self):
-        draw_in_direction(self.pen_size * 2, 'left', 90)
-        draw_in_direction(self.pen_size * 4, 'right', 90)
+        draw_in_direction(self.pen_size * 10, 'left', 90)
+        draw_in_direction(self.pen_size * 12, 'right', 90)
         self.corners_edge.append(position())
+        draw_in_direction(self.pen_size * 10, 'right', 90)
+        draw_in_direction(self.pen_size * 8, 'right', 90)
+        draw_in_direction(self.pen_size * 6, 'right', 90)
+        draw_in_direction(self.pen_size * 4, 'right', 90)
         draw_in_direction(self.pen_size * 2, 'right', 90)
         draw_in_direction(self.pen_size * 2, 'right', 90)
         draw_in_direction(self.pen_size * 2, 'left', 90)
+        draw_in_direction(self.pen_size * 4, 'left', 90)
+        draw_in_direction(self.pen_size * 6, 'left', 90)
+        draw_in_direction(self.pen_size * 8, 'left', 90)
+        draw_in_direction(self.pen_size * 10, 'left', 90)
 
     def draw(self, width_patterns_count, length_patterns_count):
         start_drawing_position = self._calculate_start_drawing_position(width_patterns_count, length_patterns_count)

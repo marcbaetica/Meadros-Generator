@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from turtle import width, penup, pendown, speed, color, screensize, goto, hideturtle
+from turtle import width, penup, pendown, speed, color, screensize, goto, hideturtle, forward
 
 
 class MeandrosDrawingBase(ABC):
@@ -23,9 +23,11 @@ class MeandrosDrawingBase(ABC):
 
     @abstractmethod
     def _draw_pattern_corner(self):
+        # TODO: Change logic to make this rely on _draw_pattern_once().
         pass
 
     def draw_meandros(self, width_patterns_count, length_patterns_count, start_position):
+        # forward(1)  # For pinpointing center.
         penup()
         print(start_position)
         goto(start_position)
